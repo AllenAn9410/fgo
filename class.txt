@@ -146,10 +146,8 @@
 美杜莎〔Lancer〕 : Lancer
 戈尔贡 : Avenger
 豹人 : Lancer
-提亚马特 :
 梅林 : Caster
 魔神王 盖提亚 :
-所罗门 :
 宫本武藏 : Saber
 “山之翁” : Assassin
 谜之女主角X〔Alter〕 : Berserker
@@ -165,7 +163,6 @@
 铃鹿御前 : Saber
 ＢＢ : MoonCancer
 杀生院祈荒 : Alterego
-BeastⅢ／R :
 山鲁佐德 : Caster
 武则天 : Assassin
 彭忒西勒亚 : Berserker
