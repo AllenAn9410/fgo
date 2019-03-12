@@ -36,45 +36,55 @@ public class Servent {
         StringBuilder b = new StringBuilder();
         b.append("{").append("\n");
         b.append("id").append(":").append("\"").append(id).append("\"").append(",").append("\n");
+        b.append("name").append(":").append("\"").append(name).append("\"").append(",").append("\n");
         b.append("photo").append(":").append("\"").append(photo).append("\"").append(",").append("\n");
         b.append("className").append(":").append("\"").append(className).append("\"").append(",").append("\n");
-        b.append("limitBreak").append(":").append("[").append("\"");
         if(limitBreak.size() != 0){
+            b.append("limitBreak").append(":").append("[").append("\n");
             for(int i=0;i<limitBreak.size();i++){
-                b.append("{");
+                //b.append("{");
                 b.append(limitBreak.get(i));
-                b.append("}");
+                //b.append("}");
                 if(i != limitBreak.size()-1){
                     b.append(",");
                 }
                 b.append("\n");
             }
-            b.append(",");
+            b.append("]");
+            b.append(",").append("\n");
+        } else {
+            b.append("limitBreak").append(":").append("null").append("\n");
         }
-        b.append("]");
-        b.append("skillsName").append(":").append("[").append("\"");
-        for(int i=0;i<skillsName.size();i++){
-            b.append(skillsName.get(i)).append("\n");
+        b.append("skillsName").append(":").append("[");
+        if(skillsName == null || skillsName.size()==0){
+            b.append("\"技能1\"").append(",").append("\"技能2\"").append(",").append("\"技能3\"");
+        } else {
+            for(int i=0;i<skillsName.size();i++){
+                b.append(skillsName.get(i));
+                if(i != skillsName.size()-1){
+                    b.append(",");
+                }
+            }
         }
-        b.append("]");
-        b.append("skillsMaterials").append(":").append("[").append("\"");
+        b.append("]").append(",").append("\n");
+        b.append("skillsMaterials").append(":").append("[").append("\n");
         for(int i=0;i<skillsMaterials.size();i++){
-            b.append("{").append(skillsMaterials.get(i)).append("}");
-            if(i != limitBreak.size()-1){
+            b.append(skillsMaterials.get(i));
+            if(i != skillsMaterials.size()-1){
                 b.append(",");
             }
             b.append("\n");
         }
         b.append("]").append("\n");
         b.append("}").append("\n");
-        return "";
+        return b.toString();
 
     }
 
     private String id;
-    private String name;
-    private String photo;
-    private String className;
+    private String name="";
+    private String photo="";
+    private String className="";
     private List limitBreak  = new ArrayList();
     private List skillsName = new ArrayList<>();
     private List skillsMaterials = new ArrayList<>();
